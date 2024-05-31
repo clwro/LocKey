@@ -1,0 +1,235 @@
+
+
+/*HEADER*/
+
+a{
+    text-decoration: none;
+    color: #f9faf8;
+}
+
+.links{
+    list-style: none;
+}
+
+li{
+    float:left;
+    padding: 8px;
+}
+
+.menu_mobile, .menu_user{
+    display: none;
+}
+
+.headerContainer{
+    width: 100%;
+    height: 150px;
+    display:flex;
+    background-color: #303841;
+    color: #f9faf8;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 18px;
+}
+
+#headerLogo{
+    width:250px;
+}
+
+    /*DESCRIÇÃO*/
+
+.card_descricao{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.description{
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.card{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;    
+}
+
+.image_decric{
+    width: 500px;
+    height: 300px;
+    box-shadow: 0 0 10px #1f2937;
+
+}
+
+.image_decric img{
+    width: 100%;
+    height: 100%;
+}
+
+.descriptionText{
+    font-size: 18px;
+}
+.descriptionTitle{
+    font-size: 36px;
+    font-weight: 800;
+}
+
+.signupButtn1{
+    background-color: #5CE1E6;
+    color:#f9faf8;
+    text-align:center;
+    padding: 15px 40px;
+    border-radius: 15px;
+    text-decoration: none;
+    border: 0;
+    box-shadow: 0 0 7px #565B60;
+    cursor: pointer;
+}
+
+    /*AVALIAÇÕES*/
+    /*IDEIA: fazer um carrossel com as avaliações para ocupar menos espaço*/
+.card_aval{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+.title{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 900;
+    color:#1f2937;
+}
+.randInfoContainer{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap: 45px;
+}
+
+
+.cardDescript{
+    text-align: center;
+    inline-size: 200px;
+}
+
+.cardDescript img{
+    box-shadow: 0 0 10px #1f2937;
+    border: 3px solid #565B60;
+    border-radius: 10px;
+}
+
+    /*SOBRENOS*/
+
+.quoteContainer{
+    display:flex;
+    background-color: #E5E7EB;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    justify-content: center;
+    padding: 50px 0 50px 0;
+}
+
+.quoteContainer h1{
+    font-size: 45px;
+}
+
+.quote{
+    width: 75%;
+    font-size: 36px;
+    font-style: italic;
+    color:#1F2937;
+}
+
+    /*ADVERTISING*/
+
+.advertising{
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0 50px 0;
+}
+
+.rectangle{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 60%;
+    height: 150px;
+    background-color: #565B60;
+    border-radius: 20px;
+    box-shadow: 0 0 10px #565B60;
+}
+.rectangleTextDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    width: 40%;
+}
+
+.boldRectangleText{
+    font-weight: 900;
+    color:#E5E7EB;
+}
+
+.rectangleText{
+    color:#E5E7EB;
+    font-size: 18px;
+}
+    
+.rectangleButton{ 
+    background-color: #5CE1E6;
+    color:#f9faf8;
+    text-align:center;
+    padding: 15px 40px;
+    border-radius: 15px;
+    text-decoration: none;
+    border: 0;
+    
+    cursor: pointer;
+}
+
+
+.fuckingButton{
+    position:relative;
+}
+
+/*FOOTER*/
+
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #303841;
+    color:#f9faf8;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    flex-direction: column;
+    
+}
+

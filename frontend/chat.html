@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="stylesheet" href="./css/chat.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="./css/responsivo.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+</head>
+<body>
+    <div class="headerContainer">
+        <div class="header">
+            <button class="menu_mobile" onclick="botao_menu()">
+                <div class="box_menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+            <img src="img\lockeyLogo.png" id="headerLogo">
+            <ul class="links">
+                <li><a href=#sobreNos>Sobre nós</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Registre-se</a></li>
+            </ul>
+            <button class="menu_user" onclick="">
+                <div class="box_user">
+                    <img src="img/user.svg"  alt="" >
+                </div>
+            </button>
+        </div>
+    </div> 
+
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-title">Contatos</div>
+            <ul class="contacts">
+                <li><div class="contact-box">Contato 1</div></li>
+                <li><div class="contact-box">Contato 2</div></li>
+                <li><div class="contact-box">Contato 3</div></li>
+                <!-- Adicione mais contatos conforme necessário -->
+            </ul>
+        </aside>
+
+        <section class="chat-container">
+            <header class="chat-header">
+                <h2>Chat</h2>
+            </header>
+            <div class="chat-body" id="chat-body">
+                <!-- Aqui serão adicionadas as mensagens -->
+            </div>
+            <div class="message-input">
+                <input type="text" id="message-input" placeholder="Digite sua mensagem...">
+                <button onclick="sendMessage()">Enviar</button>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>Copyright © LocKey 2024</p>
+    </footer>
+
+    <script>
+        function sendMessage() {
+            var messageInput = document.getElementById("message-input");
+            var message = messageInput.value.trim();
+            
+            if (message !== "") {
+                var chatBody = document.getElementById("chat-body");
+                var messageDiv = document.createElement("div");
+                messageDiv.classList.add("container");
+                var img = document.createElement("img");
+                img.src = "./img/avatar.png";
+                img.alt = "Avatar";
+                var messageContent = document.createElement("p");
+                messageContent.textContent = message;
+                var timeSpan = document.createElement("span");
+                timeSpan.classList.add("time-right");
+                var d = new Date();
+                var hours = d.getHours();
+                var minutes = d.getMinutes();
+                if (minutes < 10) {
+                    minutes = "0" + minutes;
+                }
+                var time = hours + ":" + minutes;
+                timeSpan.textContent = time;
+                messageDiv.appendChild(img);
+                messageDiv.appendChild(messageContent);
+                messageDiv.appendChild(timeSpan);
+                chatBody.appendChild(messageDiv);
+                
+                messageInput.value = "";
+                chatBody.scrollTop = chatBody.scrollHeight; // Rolagem automática para a última mensagem
+            }
+        }
+    </script>
+</body>
+</html>

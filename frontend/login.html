@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css\login.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="./css/responsivo.css">
+    <!-- AXIOS.-->
+    <script src= "https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div class="page">
+        <form method="POST" class="formLogin">
+            <div class="logo">
+            <h1>Login</h1>
+            
+            <img src="img\LK.png" id="headerLogo" height="80">
+            </div>
+            <label for="email">E-mail</label>
+            <input id ='email' type="email" placeholder="Digite seu e-mail" autofocus="true" />
+            <label for="password">Senha</label>
+            <input id = 'senha' type="password" placeholder="Digite sua senha" />
+            <div class = "links">
+            <a href="/">Esqueci minha senha</a>
+            <a href="register.html">Não tenho conta</a>
+            </div>
+            <input type="submit" value="Acessar" class="btn" onclick =''Logar()'/>
+        </form>
+    </div>
+    <script type ="text/javascript">
+        function Logar(){
+            // RECEBE OS DADOS DO USUARIO.
+            email = document.querySelector('#email').value;
+            senha = document.querySelector('#senha').value;
+
+            // VERIFICA OS DADOS.
+            if (!email || !senha){
+                return alert('Por favor, complete os campos.');
+            }
+
+            // ENVIA OS DADOS PARA O SERVIDOR.
+            axios.post('api/users/logar',{
+                email, senha
+            }).then( response => {
+                if (response.data.erro){
+                    return alert(response.data.erro);
+                }else {
+                    // SE TUDO DER CERTO, REDICIONA.
+                    window.location.href ='/privado';
+                }
+            }).catch(erro => {
+                return alert(response.data.erro);
+            });
+        }
+    </script>
+</body>
+</html>

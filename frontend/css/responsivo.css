@@ -1,0 +1,125 @@
+@media screen and (max-width: 768px) {
+
+    /*INDEX*/
+    
+    /*HEADER*/
+    .header{
+        width: 100%;
+        height: 100%;
+        justify-content: space-around;
+
+    }
+
+    #headerLogo{
+        width:250px;
+    }
+    .links{
+        display: none;
+    }
+    
+
+    .menu_mobile{
+        display: block;
+        height: 100%;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+    
+    .box_menu{
+        width: 100%;
+        height: 50px;
+        flex-direction: column;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .box_menu span{
+        width: 40px;
+        height: 4px;
+        background-color: white;
+    }
+
+    .menu_user{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    .box_user{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 50px;
+    }
+
+    .box_user img{
+        width: 50px;
+    }
+
+    .menu-mobile.activate{
+        display: none;
+    }
+    
+    /*DESCRIÇÃO*/
+
+    .card{
+        width: 90%;
+        text-align: center;
+    }
+
+    .image_decric{
+        display: none;
+    }
+
+
+    /*AVALIAÇÕES*/
+    /*IDEIA: fazer um carrossel com as avaliações para ocupar menos espaço*/
+
+    .randInfoContainer{
+        flex-direction: column;
+    }
+    
+    /*SOBRENOS*/
+
+    .quote {
+        width: 90%;
+        font-size: 28px;
+    }
+
+    /*ADVERTISING*/
+
+    .rectangle{
+        width: 90%;
+    }
+    /*INDEX*/
+
+    /*REGISTRO/LOGIN*/
+
+    .formLogin{
+        width: 300px;
+    }
+
+    /*REGISTRO/LOGIN*/
+
+
+    /*SERVICOS*/
+
+    .area_servicos{
+        width: 90%;
+    }
+
+    #abrirChamado{
+        width: 70%;
+    }
+
+    /*EMERGENCIA*/
+    .area_emergencia{
+        width: 90%;
+    }
+}
