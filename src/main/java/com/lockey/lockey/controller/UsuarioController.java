@@ -7,8 +7,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
+@CrossOrigin("*")
 @RequestMapping("/api/usuarios")
 public class UsuarioController {
 
@@ -37,4 +39,11 @@ public class UsuarioController {
         usuarioService.deleteUsuario(id);
         return ResponseEntity.noContent().build();
     }
+
+    @GetMapping("/login")
+    public ResponseEntity<Usuario> login(@RequestParam String login, @RequestParam String senha) {
+        Optional<Usuario> usuario = usuarioService.getUsuarioByLoginAndSenha(login, senha);
+        return usuario.map(value -> ResponseEntity.ok().body(value)).orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
 }

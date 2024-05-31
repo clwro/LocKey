@@ -5,58 +5,74 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrar</title>
-    <link rel="stylesheet" href="css\register.css">
+    <link rel="stylesheet" href="css/register.css">
     <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="./css/responsivo.css">
-    <!-- AXIOS.-->
-    <script src= "https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="css/responsivo.css">
+    <!-- AXIOS. -->
+    <script src="https://unpkg.com/axios@1.7.2/dist/axios.min.js"></script>
 </head>
 <body>
     <div class="page">
-        <form method="POST" class="formLogin">
+        <form method="POST" class="formLogin" onsubmit="event.preventDefault(); Registrar();">
             <div class="logo">
                 <h1>Registro</h1>
-                <img src="img\LK.png" id="headerLogo" height="80">
-                </div>
+                <img src="img/LK.png" id="headerLogo" height="80">
+            </div>
             <label for="email">E-mail</label>
-            <input id ='email' type="email" placeholder="Digite seu e-mail" autofocus="true" />
+            <input id="email" type="email" placeholder="Digite seu e-mail" autofocus="true" required />
             <label for="password">Senha</label>
-            <input id = 'senha' type="password" placeholder="Digite sua senha" />
+            <input id="password" type="password" placeholder="Digite sua senha" required />
             <label for="confirm-password">Confirme sua senha</label>
-            <input type="confirm-password" placeholder="Confirme sua senha">
+            <input id="confirm-password" type="password" placeholder="Confirme sua senha" required />
             
             <div class="checkboxes">
-            <label for="newsleter">Inquilino</label>
-            <input type="checkbox" id="inquilino"name="inquilino" value="newsletter" />
-            <label for="locatario">Locatario</label>
-            <input type="checkbox" id="locatario"name="locatario" value="locatario" />
+                <label for="inquilino">Inquilino</label>
+                <input type="checkbox" id="inquilino" name="inquilino" value="inquilino" />
+                <label for="locatario">Locatário</label>
+                <input type="checkbox" id="locatario" name="locatario" value="locatario" />
             </div>
             <input type="submit" value="Registrar" class="btn" />
         </form>
     </div>
-    <script type ="text/javascript">
-        function Registrar(){
+    <script type="text/javascript">
+        function Registrar() {
             // RECEBE OS DADOS DO USUARIO.
-            email = document.querySelector('#email').value;
-            senha = document.querySelector('#senha').value;
+            const email = document.querySelector('#email').value;
+            const senha = document.querySelector('#password').value;
+            const confirmSenha = document.querySelector('#confirm-password').value;
+            const inquilino = document.querySelector('#inquilino').checked;
+            const locatario = document.querySelector('#locatario').checked;
 
             // VERIFICA OS DADOS.
-            if (!email || !senha){
+            if (!email || !senha) {
                 return alert('Por favor, complete os campos.');
             }
 
-            // ENVIA OS DADOS PARA O SERVIDOR.
-            axios.post('api/users/Registrar',{
-                email, senha
-            }).then( response => {
-                if (response.data.erro){
-                    return alert(response.data.erro);
-                }else {
-                    // SE TUDO DER CERTO, REDICIONA.
-                    window.location.href ='/privado';
-                }
-            }).catch(erro => {
-                return alert(response.data.erro);
+            if (senha !== confirmSenha) {
+                return alert('As senhas não coincidem.');
+            }
+
+            let tipoConta;
+            if (inquilino) {
+                tipoConta = "inquilino";
+            } else if (locatario) {
+                tipoConta = "locatario";
+            } else {
+                return alert('Por favor, selecione um tipo de conta.');
+            }
+
+            axios.post('http://localhost:8080/api/usuarios', {
+                login: email,
+                senha: senha,
+                tipoConta: tipoConta
+            })
+            .then(function (response) {
+                alert('Registro realizado com sucesso!');
+                console.log(response);
+            })
+            .catch(function (error) {
+                alert('Erro ao registrar, tente novamente.');
+                console.log(error);
             });
         }
     </script>
