@@ -1,4 +1,4 @@
-HELP.md
+API_Endpoints.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
