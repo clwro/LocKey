@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="css/responsivo.css">
     <!-- AXIOS -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
 </head>
 <body>
     <div class="headerContainer">
@@ -22,15 +21,15 @@
                     <span></span>
                 </div>
             </button>
-            <img src="img\lockeyLogo.png" id="headerLogo">
+            <img src="img/lockeyLogo.png" id="headerLogo">
             <ul class="links">
-                <li><a href=#sobreNos>Sobre nós</a></li>
+                <li><a href="#sobreNos">Sobre nós</a></li>
                 <li><a href="login.html">Login</a></li>
                 <li><a href="register.html">Registre-se</a></li>
             </ul>
             <button class="menu_user" onclick="">
                 <div class="box_user">
-                    <img src="img/user.svg"  alt="" >
+                    <img src="img/user.svg"  alt="">
                 </div>
             </button>
         </div>
@@ -45,10 +44,10 @@
             <div class="area_servicos">
                 <div class="opcao_sevico">
                     <h3>Tipo do serviço: </h3>
-                    <input id="servico" placeholder="Descreva brevemente">
+                    <input id="servico" name="servico" placeholder="Descreva brevemente">
                     <h3>Urgência: </h3>
-                    <select class="form-select" aria-label="Default select example">
-                        <option selected>Selecione</option>
+                    <select id="urgencia" class="form-select" aria-label="Default select example">
+                        <option value="" selected>Selecione</option>
                         <option value="1">1 - Grave</option>
                         <option value="2">2 - Média</option>
                         <option value="3">3 - Leve</option>
@@ -57,28 +56,30 @@
                 <div class="descricao_servico">
                     <div class="mb-3">
                         <h3>Descrição:</h3>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Descreva detalhadamente o serviço a ser realizado."></textarea>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" name="descricao" rows="3" placeholder="Descreva detalhadamente o serviço a ser realizado."></textarea>
                     </div>
                 </div>
                 <button type="submit" id="abrirChamado">Abrir chamado</button>
             </div>
         </div>
     </form>
+
+    <div class="footer">
+        <p>Copyright © LocKey 2024</p>
     </div>
 
     <script>
-        
-        function enviarServico(){
+        function enviarServico() {
             const servico = document.getElementById('servico').value;
             const descricao = document.getElementById('exampleFormControlTextarea1').value;
-            const urgencia = document.querySelector('select').value;
+            const urgencia = document.getElementById('urgencia').value;
 
-            if(!servico || !descricao || !urgencia){
+            if (!servico || !descricao || !urgencia) {
                 alert('Preencha todos os campos!');
                 return;
             }
 
-            axios.post('http://localhost:8080/servicos', {
+            axios.post('http://localhost:8080/api/servicos', {
                 tipoServico: servico,
                 descricao: descricao,
                 urgencia: urgencia
@@ -86,7 +87,7 @@
             .then(function (response) {
                 console.log(response);
                 if (response.status === 200) {
-                    return alert("Serviço criado com sucesso.");
+                    alert("Serviço criado com sucesso.");
                 }
             })
             .catch(function (error) {
@@ -96,13 +97,6 @@
         }
     </script>
 
-
-
-    <div class="footer">
-        <p>Copyright © LocKey 2024</p>
-    </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
 </body>
 </html>
