@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="css/servicos.css">
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/responsivo.css">
+    <!-- AXIOS -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 </head>
 <body>
@@ -38,26 +40,61 @@
         <h1>Serviços</h1>
     </div>
 
-    <div class="container_servicos">
-        <div class="area_servicos">
-            <div class="opcao_sevico">
-                <h3>Escolha um serviço: *</h3>
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
+    <form id="servicosForm" method="POST" onsubmit="event.preventDefault(); enviarServico();">
+        <div class="container_servicos">
+            <div class="area_servicos">
+                <div class="opcao_sevico">
+                    <h3>Tipo do serviço: </h3>
+                    <input id="servico" placeholder="Descreva brevemente">
+                    <h3>Urgência: </h3>
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Selecione</option>
+                        <option value="1">1 - Grave</option>
+                        <option value="2">2 - Média</option>
+                        <option value="3">3 - Leve</option>
+                    </select>
+                </div>
+                <div class="descricao_servico">
+                    <div class="mb-3">
+                        <h3>Descrição:</h3>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Descreva detalhadamente o serviço a ser realizado."></textarea>
+                    </div>
+                </div>
+                <button type="submit" id="abrirChamado">Abrir chamado</button>
             </div>
-            <div class="descricao_servico">
-                <div class="mb-3">
-                    <h3>Descrição:</h3>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                  </div>
-            </div>
-            <button id="abrirChamado">Abrir chamado</button>
         </div>
+    </form>
     </div>
+
+    <script>
+        
+        function enviarServico(){
+            const servico = document.getElementById('servico').value;
+            const descricao = document.getElementById('exampleFormControlTextarea1').value;
+            const urgencia = document.querySelector('select').value;
+
+            if(!servico || !descricao || !urgencia){
+                alert('Preencha todos os campos!');
+                return;
+            }
+
+            axios.post('http://localhost:8080/servicos', {
+                tipoServico: servico,
+                descricao: descricao,
+                urgencia: urgencia
+            })
+            .then(function (response) {
+                console.log(response);
+                if (response.status === 200) {
+                    return alert("Serviço criado com sucesso.");
+                }
+            })
+            .catch(function (error) {
+                console.log(error);
+                alert('Erro ao abrir chamado!');
+            });
+        }
+    </script>
 
 
 

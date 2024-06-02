@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin("*")
 @RequestMapping("/api/servicos")
 public class ServicosController {
 
@@ -26,6 +27,7 @@ public class ServicosController {
                 .map(servicos -> ResponseEntity.ok().body(servicos))
                 .orElse(ResponseEntity.notFound().build());
     }
+
 
     @PostMapping
     public Servicos createServicos(@RequestBody Servicos servicos) {

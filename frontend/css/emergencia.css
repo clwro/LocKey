@@ -70,6 +70,18 @@ li{
     gap: 15px;
     box-shadow: 0 0 10px #565B60;
 }
+
+input {
+    width: 100%;
+    padding: 15px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    border-radius: 15px;
+    transition: all linear 160ms;
+    outline: none;
+}
 #abrirChamado{
     background-color: #5CE1E6;
     color:#f9faf8;

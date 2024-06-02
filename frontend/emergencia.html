@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="css/emergencia.css">
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/responsivo.css">
+    <!-- AXIOS -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 </head>
 <body>
@@ -38,27 +40,59 @@
         <h1>Emergencia</h1>
     </div>
 
-    <div class="container_emergencia">
-        <div class="area_emergencia">
-            <div class="opcao_emergencia">
-                <h3>Qual sua emergencia: *</h3>
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
+    <form method="POST" onsubmit="event.preventDefault(); enviarEmergencia();">
+        <div class="container_emergencia">
+            <div class="area_emergencia">
+                <div class="opcao_emergencia">
+                    <h3>Qual sua emergencia: *</h3>
+                    <input id="emergencia" placeholder="Descreva brevemente">
+                    <h2>Selecione o nivel de urgência:</h2>
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Nivel de urgencia</option>
+                        <option value="1">1 - Grave</option>
+                        <option value="2">2 - Médio</option>
+                        <option value="3">3 - Leve</option>
+                    </select>
+                </div>
+                <div class="descricao_emergencia">
+                    <div class="mb-3">
+                        <h3>Descrição:</h3>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Descreva a situação detalhadamente"></textarea>
+                    </div>
+                </div>
+                <button id="abrirChamado" type="submit">Enviar pedido</button>
             </div>
-            <div class="descricao_emergencia">
-                <div class="mb-3">
-                    <h3>Descrição:</h3>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                  </div>
-            </div>
-            <button id="abrirChamado">Enviar pedido</button>
         </div>
+    </form>
     </div>
 
+    <script>
+        function enviarEmergencia(){
+            const emergencia = document.querySelector('#emergencia').value;
+            const descricao = document.querySelector('#exampleFormControlTextarea1').value;
+            const nivel = document.querySelector('.form-select').value;
+
+            if (!emergencia || !descricao || !nivel) {
+                return alert('Por favor, complete os campos.');
+            }
+
+            axios.post(`http://localhost:8080/api/emergencias`, {
+                tipoEmergencia: emergencia,
+                descricao: descricao,
+                nivelUrgencia: nivel
+            })
+            .then(response => {
+                alert(response.data);
+                if (response.status === 200) {
+                    return alert("Emergencia criada com sucesso.");
+                }
+            })
+            .catch(error => {
+                alert('Erro ao criar emergencia.');
+                console.error(error);
+            });
+        }
+    </script>
 
 
     <div class="footer">
