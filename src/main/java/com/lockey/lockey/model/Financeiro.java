@@ -20,8 +20,14 @@ public class Financeiro {
     @JoinColumn(name = "id_imovel")
     private Imovel imovel;
 
-    private BigDecimal boletos;
+    private BigDecimal valor;
 
     @Column(name = "status_pagamento")
     private String statusPagamento;
+
+    @Column(name = "nome_conta")
+    private String nomeConta;
+
+    @Column(name = "data_vencimento")
+    private String dataVencimento;
 }

@@ -50,64 +50,57 @@ li{
     background-color: #565B60;
 }
 
-
-.container_financeiro{
+.container_financeiro {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 30px 0 30px 0;
+    padding: 30px 0;
 }
 
-.tabela_finan{
+.tabela_finan {
     width: 900px;
-    border: 2px solid #303841;
     border-radius: 25px;
     box-shadow: 0 0 10px #565B60;
-
+    border-collapse: collapse; /* Para remover espaços entre as bordas das células */
 }
 
-.tabela_finan > .titulo_tabela > th{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.tabela_finan th, .tabela_finan td {
+    width: 20%; /* Ajuste conforme necessário */
+    text-align: center;
+    padding: 15px 0;
+    
 }
 
-.tabela_finan > tbody {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.tabela_finan > tbody > tr { 
-    width: 90%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+.tabela_finan thead th {
+    width: auto;
+    text-align: center;
     padding: 20px;
-    border-bottom: 1px solid black;
+    
 }
-.tabela_finan > tbody > tr:last-child{
+
+.tabela_finan tbody {
+    width: 100%;
+    border-bottom: 2px solid #303841;
+}
+
+.tabela_finan tbody tr {
+    width: 100%;
+    display: table-row; /* Garantir que as linhas sejam exibidas como linhas de tabela */
+}
+
+.tabela_finan tbody tr:last-child {
     border-bottom: none;
 }
 
-.tabela_finan > tbody > tr > th{
-    width: 100%;
+.tabela_finan th[colspan="5"] {
+    width: 100%; /* Garante que o título com colspan ocupe a largura total */
 }
 
-.tabela_finan > tbody > tr > td{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.btn_boleto{
+.btn_boleto {
     background-color: #565B60;
-    color:#f9faf8;
-    text-align:center;
+    color: #f9faf8;
+    text-align: center;
     padding: 15px 40px;
     border-radius: 15px;
     text-decoration: none;
@@ -115,6 +108,7 @@ li{
     box-shadow: 0 0 7px #565B60;
     cursor: pointer;
 }
+
 
 
 /*FOOTER*/

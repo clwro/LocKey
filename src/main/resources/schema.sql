@@ -17,8 +17,10 @@ CREATE TABLE IF NOT EXISTS USUARIO (
 CREATE TABLE IF NOT EXISTS FINANCEIRO (
                                           id INT AUTO_INCREMENT PRIMARY KEY,
                                           id_imovel INT,
-                                          boletos DECIMAL(10, 2) NOT NULL,
+                                          valor DECIMAL(10, 2) NOT NULL,
     status_pagamento VARCHAR(255) NOT NULL,
+    nome_conta VARCHAR(255) NOT NULL,
+    data_vencimento VARCHAR(255) NOT NULL,
     FOREIGN KEY (id_imovel) REFERENCES IMOVEL(id)
     );
 

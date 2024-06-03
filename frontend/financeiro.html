@@ -7,6 +7,51 @@
     <link rel="stylesheet" href="css/financeiro.css">
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/responsivo.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        async function fetchAndUpdateTable() {
+            try {
+                const response = await axios.get('http://localhost:8080/api/financeiros');
+                const data = response.data;
+
+                const table = document.querySelector('.tabela_finan');
+                
+                data.forEach(conta => {
+                    const row = document.createElement('tr');
+                    
+                    const contaCell = document.createElement('th');
+                    contaCell.textContent = conta.nomeConta;
+                    row.appendChild(contaCell);
+                    
+                    const dataCell = document.createElement('th');
+                    dataCell.textContent = conta.dataVencimento;
+                    row.appendChild(dataCell);
+                    
+                    const valorCell = document.createElement('th');
+                    valorCell.textContent = `R$` + conta.valor;
+                    row.appendChild(valorCell);
+                    
+                    const statusCell = document.createElement('th');
+                    statusCell.textContent = conta.statusPagamento;
+                    row.appendChild(statusCell);
+                    
+                    const boletoCell = document.createElement('th');
+                    const boletoButton = document.createElement('button');
+                    boletoButton.classList.add('btn_boleto');
+                    boletoButton.textContent = 'Acessar';
+                    boletoCell.appendChild(boletoButton);
+                    row.appendChild(boletoCell);
+                    
+                    table.appendChild(row);
+                });
+            } catch (error) {
+                console.error('Erro ao buscar dados: ', error);
+            }
+        }
+
+        // Chama a função quando a página carregar
+        window.onload = fetchAndUpdateTable;
+    </script>
 
 </head>
 <body>
@@ -41,22 +86,17 @@
         <table class="tabela_finan">
             <tr class="titulo_tabela">
                 <th colspan="5"><h1>Contas</h1></th>
+                <tr>
+                    <th>Conta</th>
+                    <th>Data</th>
+                    <th>Valor</th>
+                    <th>Status</th>
+                    <th>Boleto</th>
+                </tr>
             </tr>
-            <tr>
-                <th>Conta</th>
-                <th>Data</th>
-                <th>Valor</th>
-                <th>Status</th>
-                <th>Boleto</th>
-            </tr>
-            <tr>
-                <td>Conta de luz</td>
-                <td>24/06</td>
-                <td>R$84,59</td>
-                <td>Paga</td>
-                <td><button class="btn_boleto">Acessar</button></td>
-            </tr>
+            
         </table>
+        
     </div>
 
 

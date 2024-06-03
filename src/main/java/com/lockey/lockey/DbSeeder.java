@@ -44,9 +44,9 @@ public class DbSeeder implements CommandLineRunner {
         usuarioRepository.saveAll(Arrays.asList(usuario1, usuario2, usuario3));
 
         // Seed Financeiro
-        Financeiro financeiro1 = new Financeiro(null, imovel1, new BigDecimal("1500.00"), "pendente");
-        Financeiro financeiro2 = new Financeiro(null, imovel2, new BigDecimal("2000.00"), "pago");
-        Financeiro financeiro3 = new Financeiro(null, imovel3, new BigDecimal("2500.00"), "pendente");
+        Financeiro financeiro1 = new Financeiro(null, imovel1, new BigDecimal("1500.00"), "pendente", "Conta de luz", "24/06/2024");
+        Financeiro financeiro2 = new Financeiro(null, imovel2, new BigDecimal("2000.00"), "pago", "Conta de água", "07/09/2024");
+        Financeiro financeiro3 = new Financeiro(null, imovel3, new BigDecimal("2500.00"), "pendente", "Conta de internet", "30/12/2024");
         financeiroRepository.saveAll(Arrays.asList(financeiro1, financeiro2, financeiro3));
 
         // Seed Emergencia
