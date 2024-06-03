@@ -59,25 +59,22 @@ li{
     padding: 30px 0 30px 0;
 }
 
-.area_conta{
-    width: 50%;
-    border: none;
-    box-shadow: 0 0 10px #303841;
+.tabela_finan{
+    width: 900px;
+    border: 2px solid #303841;
     border-radius: 25px;
+    box-shadow: 0 0 10px #565B60;
+
+}
+
+.tabela_finan > .titulo_tabela > th{
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
 }
 
-.data_conta{
-    width: 100%;
-    border-radius: 25px 25px 0 0;
-
-    background-color: #565B60;
-}
-
-.info_conta{
+.tabela_finan > tbody {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -85,18 +82,45 @@ li{
     flex-direction: column;
 }
 
-.info_conta > section{
-    width: 50%;
+.tabela_finan > tbody > tr { 
+    width: 90%;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid black;
+}
+.tabela_finan > tbody > tr:last-child{
+    border-bottom: none;
+}
+
+.tabela_finan > tbody > tr > th{
+    width: 100%;
+}
+
+.tabela_finan > tbody > tr > td{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn_boleto{
+    background-color: #565B60;
+    color:#f9faf8;
+    text-align:center;
+    padding: 15px 40px;
+    border-radius: 15px;
+    text-decoration: none;
+    border: 0;
+    box-shadow: 0 0 7px #565B60;
+    cursor: pointer;
 }
 
 
 /*FOOTER*/
 
 .footer{
-    width: 100%;    
+    width: 100%;  
     display: flex;
     justify-content: center;
     align-items: center;
@@ -105,7 +129,6 @@ li{
     padding-top: 25px;
     padding-bottom: 25px;
     flex-direction: column;
-
 }
 
 @media screen and (max-width: 768px){
