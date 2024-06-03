@@ -98,7 +98,7 @@ input {
 /*FOOTER*/
 
 .footer{
-    width: 100%;    
+    width: 100%;  
     display: flex;
     justify-content: center;
     align-items: center;
@@ -107,7 +107,9 @@ input {
     padding-top: 25px;
     padding-bottom: 25px;
     flex-direction: column;
-
+    position: fixed;
+    left: 0;
+    bottom: 0;
 }
 
 @media screen and (max-width: 768px){

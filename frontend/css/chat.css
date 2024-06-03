@@ -171,13 +171,19 @@ div#chat-body {
     background-color: #4AC8CC;
 }
 
-.footer {
+.footer{
+    width: 100%;  
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #303841;
-    color: #f9faf8;
-    padding: 25px 0;
+    color:#f9faf8;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    bottom: 0;
 }
 
 /* Novos estilos para a mensagem enviada */

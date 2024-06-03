@@ -123,6 +123,9 @@ li{
     padding-top: 25px;
     padding-bottom: 25px;
     flex-direction: column;
+    position: fixed;
+    left: 0;
+    bottom: 0;
 }
 
 @media screen and (max-width: 768px){
