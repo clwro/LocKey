@@ -21,6 +21,7 @@ O sistema segue uma arquitetura de três camadas:
 
 ### Esquemas/Diagramas da Arquitetura
 
+https://gamma.app/docs/Lockey-xbhdmli1sltj4cf?mode=doc
 
 ## Tecnologias Utilizadas
 - **Spring Boot**: Framework para criação de aplicações Java.
@@ -37,6 +38,7 @@ O sistema segue uma arquitetura de três camadas:
 
 ## Repositório GitHub
 [Link para o repositório GitHub](https://github.com/clwro/LocKey)
+
 
 ## Instruções para Execução da Aplicação
 
