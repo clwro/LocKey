@@ -1,5 +1,14 @@
 /*HEADER*/
 
+body{
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #f2f2f2;
+
+}
 .headerContainer{
     width: 100%;
     height: 150px;
@@ -51,10 +60,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #565B60;  
+    background-color: #565B60;
 }
 
-.container_financeiro {
+/*containerServicos*/
+
+.container_dashboard{
     width: 100%;
     display: flex;
     justify-content: center;
@@ -62,59 +73,31 @@
     padding: 30px 0;
 }
 
-.tabela_finan {
-    width: 90%;
+.area_dashboard{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
     border-radius: 25px;
-    box-shadow: 0 0 10px #565B60;
-    background-color: white;
-    border-collapse: collapse; /* Para remover espaços entre as bordas das células */
 }
 
-.tabela_finan th, .tabela_finan td {
-    width: 20%; /* Ajuste conforme necessário */
-    text-align: center;
-    padding: 15px 0;
-    
+.imagem_dash{
+    width: 100%;
+    height: 150px;
+    background-image: url(../img/image-placeholder-500x500.jpg);
+    border-radius: 25px 25px 0 0 ;
 }
 
-.tabela_finan thead th {
-    width: auto;
-    text-align: center;
+.infos_dash{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding: 20px;
-    
+    gap: 10px;
 }
-
-.tabela_finan tbody {
-    width: 100%;
-    border-bottom: 2px solid #303841;
-}
-
-.tabela_finan tbody tr {
-    width: 100%;
-    display: table-row; /* Garantir que as linhas sejam exibidas como linhas de tabela */
-}
-
-.tabela_finan tbody tr:last-child {
-    border-bottom: none;
-}
-
-.tabela_finan th[colspan="5"] {
-    width: 100%; /* Garante que o título com colspan ocupe a largura total */
-}
-
-.btn_boleto {
-    background-color: #565B60;
-    color: #f9faf8;
-    text-align: center;
-    padding: 15px 40px;
-    border-radius: 15px;
-    text-decoration: none;
-    border: 0;
-    box-shadow: 0 0 7px #565B60;
-    cursor: pointer;
-}
-
-
 
 /*FOOTER*/
 
@@ -128,4 +111,16 @@
     padding-top: 25px;
     padding-bottom: 25px;
     flex-direction: column;
+}
+
+.btn_acessoAp {
+    background-color: #565B60;
+    color: #f9faf8;
+    text-align: center;
+    padding: 15px 40px;
+    border-radius: 15px;
+    text-decoration: none;
+    border: 0;
+    box-shadow: 0 0 7px #565B60;
+    cursor: pointer;
 }
