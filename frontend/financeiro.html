@@ -55,52 +55,44 @@
 
 </head>
 <body>
-    <div class="headerContainer">
-        <div class="header">
-            <button class="menu_mobile">
-                <div class="box_menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </button>
-            <img src="img\lockeyLogo.png" id="headerLogo">
-            <ul class="links">
-                <li><a href=#sobreNos>Sobre nós</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="register.html">Registre-se</a></li>
-            </ul>
-            <button class="menu_user" onclick="">
-                <div class="box_user">
-                    <img src="img/user.svg"  alt="" >
-                </div>
-            </button>
+    <main>
+        <div class="headerContainer">
+            <div class="header">
+                <button class="menu_not" onclick="">
+                    <div class="box_not">
+                        <a href="notificacoes.html"><img src="img/bell.svg"  alt="" ></a>
+                    </div>
+                </button>
+                <img src="img\lockeyLogo.png" id="headerLogo" onclick="dashboard.html">
+                <button class="menu_user" onclick="">
+                    <div class="box_user">
+                        <a href="usuario.html"><img src="img/user.svg"  alt="" ></a>
+                    </div>
+                </button>
+            </div>
+        </div> 
+    
+        <div class="nomeTela">
+            <h1>Financeiro</h1>
         </div>
-    </div> 
-
-    <div class="nomeTela">
-        <h1>Financeiro</h1>
-    </div>
-
-    <div class="container_financeiro">
-        <table class="tabela_finan">
-            <tr class="titulo_tabela">
-                <th colspan="5"><h1>Contas</h1></th>
-                <tr>
-                    <th>Conta</th>
-                    <th>Data</th>
-                    <th>Valor</th>
-                    <th>Status</th>
-                    <th>Boleto</th>
+    
+        <div class="container_financeiro">
+            <table class="tabela_finan">
+                <tr class="titulo_tabela">
+                    <th colspan="5"><h1>Contas</h1></th>
+                    <tr>
+                        <th>Conta</th>
+                        <th>Data</th>
+                        <th>Valor</th>
+                        <th>Status</th>
+                        <th>Boleto</th>
+                    </tr>
                 </tr>
-            </tr>
+                
+            </table>
             
-        </table>
-        
-    </div>
-
-
-
+        </div>
+    </main>
     <div class="footer">
         <p>Copyright © LocKey 2024</p>
     </div>

@@ -12,57 +12,52 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
-    <div class="headerContainer">
-        <div class="header">
-            <button class="menu_mobile">
-                <div class="box_menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </button>
-            <img src="img/lockeyLogo.png" id="headerLogo">
-            <ul class="links">
-                <li><a href="#sobreNos">Sobre nós</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="register.html">Registre-se</a></li>
-            </ul>
-            <button class="menu_user" onclick="">
-                <div class="box_user">
-                    <img src="img/user.svg"  alt="">
-                </div>
-            </button>
-        </div>
-    </div> 
-
-    <div class="nomeTela">
-        <h1>Serviços</h1>
-    </div>
-
-    <form id="servicosForm" method="POST" onsubmit="event.preventDefault(); enviarServico();">
-        <div class="container_servicos">
-            <div class="area_servicos">
-                <div class="opcao_sevico">
-                    <h3>Tipo do serviço: </h3>
-                    <input id="servico" name="servico" placeholder="Descreva brevemente">
-                    <h3>Urgência: </h3>
-                    <select id="urgencia" class="form-select" aria-label="Default select example">
-                        <option value="" selected>Selecione</option>
-                        <option value="1">1 - Grave</option>
-                        <option value="2">2 - Média</option>
-                        <option value="3">3 - Leve</option>
-                    </select>
-                </div>
-                <div class="descricao_servico">
-                    <div class="mb-3">
-                        <h3>Descrição:</h3>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" name="descricao" rows="3" placeholder="Descreva detalhadamente o serviço a ser realizado."></textarea>
+    <main>
+        <div class="headerContainer">
+            <div class="header">
+                <button class="menu_not" onclick="">
+                    <div class="box_not">
+                        <a href="notificacoes.html"><img src="img/bell.svg"  alt="" ></a>
                     </div>
-                </div>
-                <button type="submit" id="abrirChamado">Abrir chamado</button>
+                </button>
+                <img src="img\lockeyLogo.png" id="headerLogo">
+                <button class="menu_user" onclick="">
+                    <div class="box_user">
+                        <a href="usuario.html"><img src="img/user.svg"  alt="" ></a>
+                    </div>
+                </button>
             </div>
+        </div> 
+    
+        <div class="nomeTela">
+            <h1>Serviços</h1>
         </div>
-    </form>
+    
+        <form id="servicosForm" method="POST" onsubmit="event.preventDefault(); enviarServico();">
+            <div class="container_servicos">
+                <div class="area_servicos">
+                    <div class="opcao_sevico">
+                        <h3>Tipo do serviço: </h3>
+                        <input id="servico" name="servico" placeholder="Descreva brevemente">
+                        <h3>Urgência: </h3>
+                        <select id="urgencia" class="form-select" aria-label="Default select example">
+                            <option value="" selected>Selecione</option>
+                            <option value="1">1 - Grave</option>
+                            <option value="2">2 - Média</option>
+                            <option value="3">3 - Leve</option>
+                        </select>
+                    </div>
+                    <div class="descricao_servico">
+                        <div class="mb-3">
+                            <h3>Descrição:</h3>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" name="descricao" rows="3" placeholder="Descreva detalhadamente o serviço a ser realizado."></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" id="abrirChamado">Abrir chamado</button>
+                </div>
+            </div>
+        </form>
+    </main>
 
     <div class="footer">
         <p>Copyright © LocKey 2024</p>

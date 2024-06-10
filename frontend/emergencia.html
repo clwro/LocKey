@@ -13,59 +13,56 @@
 
 </head>
 <body>
-    <div class="headerContainer">
-        <div class="header">
-            <button class="menu_mobile">
-                <div class="box_menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </button>
-            <img src="img\lockeyLogo.png" id="headerLogo">
-            <ul class="links">
-                <li><a href=#sobreNos>Sobre nós</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="register.html">Registre-se</a></li>
-            </ul>
-            <button class="menu_user" onclick="">
-                <div class="box_user">
-                    <img src="img/user.svg"  alt="" >
-                </div>
-            </button>
-        </div>
-    </div> 
-
-    <div class="nomeTela">
-        <h1>Emergencia</h1>
-    </div>
-
-    <form method="POST" onsubmit="event.preventDefault(); enviarEmergencia();">
-        <div class="container_emergencia">
-            <div class="area_emergencia">
-                <div class="opcao_emergencia">
-                    <h3>Qual sua emergencia: *</h3>
-                    <input id="emergencia" placeholder="Descreva brevemente">
-                    <h2>Selecione o nivel de urgência:</h2>
-                    <select class="form-select" aria-label="Default select example">
-                        <option selected>Nivel de urgencia</option>
-                        <option value="1">1 - Grave</option>
-                        <option value="2">2 - Médio</option>
-                        <option value="3">3 - Leve</option>
-                    </select>
-                </div>
-                <div class="descricao_emergencia">
-                    <div class="mb-3">
-                        <h3>Descrição:</h3>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Descreva a situação detalhadamente"></textarea>
+    <main>
+        <div class="headerContainer">
+            <div class="header">
+                <button class="menu_not" onclick="">
+                    <div class="box_not">
+                        <a href="notificacoes.html"><img src="img/bell.svg"  alt="" ></a>
                     </div>
-                </div>
-                <button id="abrirChamado" type="submit">Enviar pedido</button>
+                </button>
+                <img src="img\lockeyLogo.png" id="headerLogo">
+                <button class="menu_user" onclick="">
+                    <div class="box_user">
+                        <a href="usuario.html"><img src="img/user.svg"  alt="" ></a>
+                     </div>
+                </button>
             </div>
+        </div> 
+    
+        <div class="nomeTela">
+            <h1>Emergencia</h1>
         </div>
-    </form>
+    
+        <form method="POST" onsubmit="event.preventDefault(); enviarEmergencia();">
+            <div class="container_emergencia">
+                <div class="area_emergencia">
+                    <div class="opcao_emergencia">
+                        <h3>Qual sua emergencia: *</h3>
+                        <input id="emergencia" placeholder="Descreva brevemente">
+                        <h2>Selecione o nivel de urgência:</h2>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Nivel de urgencia</option>
+                            <option value="1">1 - Grave</option>
+                            <option value="2">2 - Médio</option>
+                            <option value="3">3 - Leve</option>
+                        </select>
+                    </div>
+                    <div class="descricao_emergencia">
+                        <div class="mb-3">
+                            <h3>Descrição:</h3>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Descreva a situação detalhadamente"></textarea>
+                        </div>
+                    </div>
+                    <button id="abrirChamado" type="submit">Enviar pedido</button>
+                </div>
+            </div>
+        </form>
+        </div>
+    </main>
+    <div class="footer">
+        <p>Copyright © LocKey 2024</p>
     </div>
-
     <script>
         function enviarEmergencia(){
             const emergencia = document.querySelector('#emergencia').value;
@@ -93,11 +90,6 @@
             });
         }
     </script>
-
-
-    <div class="footer">
-        <p>Copyright © LocKey 2024</p>
-    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
