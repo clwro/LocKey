@@ -1,0 +1,188 @@
+
+*{
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    margin: 0;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #f2f2f2;
+
+}
+
+
+.headerContainer{
+    width: 100%;
+    height: 110px;
+    display:flex;
+    background-color: #303841;
+    color: #f9faf8;
+    justify-content: center;
+    align-items: center;
+}
+
+.header{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 18px;
+}
+
+#headerLogo{
+    display:flex;
+    width: 110px;
+    text-align: center;
+    
+}
+
+.menu_user, .menu_not{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding:20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.box_user, .box_not{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+}
+
+.box_user img, .box_not img{
+    width: 40px;
+}
+/*NOMETELA*/
+
+.nomeTela {
+    padding: 20px 0; 
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #6c7277;
+  }
+
+
+
+.container_dashboard {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+  }
+
+.area_dashboard{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 25px;
+}
+
+.imagem_dash{
+    width: 100%;
+    height: 150px;
+    background-image: url(../img/image-placeholder-500x500.jpg);
+    border-radius: 25px 25px 0 0 ;
+}
+
+.infos_dash{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    gap: 10px;
+}
+
+/*FOOTER*/
+
+.footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #303841;
+    color: #f9faf8;
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+
+.sidenav {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 200px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #303841; /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.50);
+  }
+  
+  
+  /* The navigation menu links */
+  .sidenav a {
+    padding: 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: whitesmoke;
+    display: block;
+    white-space: nowrap; /* Prevent text from breaking into multiple lines */
+    margin-left:2px;
+}
+  
+  /* When you mouse over the navigation links, change their color */
+  .sidenav a:hover {
+    color:#5CE1E6;
+   
+  }
+  .sidenav, #headerLogo {
+    width: 50px; /* Set initial width */
+    transition: width 0.3s; /* Add transition effect */
+}
+
+/* Expand sidebar and logo when hovered */
+.sidenav:hover {
+    width: 200px; /* Set width when hovered */
+    #headerLogo {
+      width: 120px;
+      margin-left: 30px;
+    }
+}
+
+  main {
+    display:flex;
+    flex-direction: column;
+    min-height:100vh;
+  }
+  /* Style page content */
+  
+.main {
+    flex-grow: 1;
+    display: flex;
+    
+  }
+
+  /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
