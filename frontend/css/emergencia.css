@@ -51,12 +51,13 @@
 /*NOMETELA*/
 
 .nomeTela{
+    color: white;
     padding: 20px 0 20px 0;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #565B60;
+    background-color: #303841;
 }
 
 /*containeremergencia*/
@@ -120,10 +121,9 @@ input {
 }
 
 #headerLogo{
-    display:flex;
-    width: 110px;
+    display:none;
+    width: 0;
     text-align: center;
-    
 }
 
 .sidenav {
@@ -154,7 +154,6 @@ input {
   
   .sidenav a:hover {
     color:#5CE1E6;
-   
   }
   .sidenav, #headerLogo {
     width: 50px; 
@@ -165,8 +164,9 @@ input {
 .sidenav:hover {
     width: 200px; 
     #headerLogo {
-      width: 120px;
-      margin-left: 30px;
+        display: flex;
+        width: 120px;
+        margin-left: 30px;
     }
 }
 
