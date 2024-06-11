@@ -71,11 +71,6 @@ input {
     flex-direction: column;
 }
 
-#headerLogo{
-    width: 120px;
-    text-align: center;
-}
-
 .alert{
     background: #EDFBD8;
     padding: 20px 40px;
