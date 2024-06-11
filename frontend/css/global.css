@@ -14,3 +14,50 @@ body{
     justify-content: space-between;
     background-color: #f2f2f2;
 }
+
+
+#headerLogo{
+    display:flex;
+    width: 110px;
+    text-align: center;
+}
+
+.sidenav {
+    height: 100%;
+    position: fixed; 
+    z-index: 1; 
+    top: 0; 
+    left: 0;
+    background-color: #303841; 
+    overflow-x: hidden; 
+    padding-top: 20px;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.50);
+  }
+  
+  .sidenav a {
+    padding: 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: whitesmoke;
+    display: block;
+    white-space: nowrap; 
+    margin-left:2px;
+}
+  .sidenav a:hover {
+    color:#5CE1E6;
+  }
+  .sidenav, #headerLogo {
+    width: 45px; 
+    transition: width 0.3s;
+}
+
+
+.sidenav:hover {
+    width: 200px; 
+    height: 100vh;
+    #headerLogo {
+        display: flex;
+        width: 120px;
+        margin-left: 30px;
+    }
+}

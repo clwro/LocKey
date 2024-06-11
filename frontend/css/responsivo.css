@@ -1,39 +1,6 @@
 @media screen and (max-width: 768px) {
 
     /*INDEX*/
-    
-    /*HEADER*/
-    .header{
-        width: 100%;
-        height: 100%;
-        justify-content: space-around;
-    }
-
-    #headerLogo{
-        width:250px;
-    }
-
-    .menu_user, .menu_not{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-    }
-
-    .box_user, .box_not{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 50px;
-    }
-
-    .box_user img, .box_not img{
-        width: 40px;
-    }
 
     /*DESCRIÇÃO*/
 
@@ -88,6 +55,10 @@
 
 
 @media screen and (max-width: 1200px) {
+
+    #headerLogo{
+        display: none;
+    }
     /*EMERGENCIA*/
     .area_emergencia{
         width: 90%;

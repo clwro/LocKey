@@ -1,58 +1,13 @@
-/*HEADER*/
-
-.headerContainer{
-    width: 100%;
-    height: 150px;
-    display:flex;
-    background-color: #303841;
-    color: #f9faf8;
-    justify-content: center;
-    align-items: center;
-}
-
-.header{
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    font-size: 18px;
-}
-
-#headerLogo{
-    width:300px;
-}
-
-.menu_user, .menu_not{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    padding: 20px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-}
-
-.box_user, .box_not{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 50px;
-}
-
-.box_user img, .box_not img{
-    width: 40px;
-}
 /*NOMETELA*/
 
 .nomeTela{
+    color: white;
     padding: 20px 0 20px 0;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #565B60;  
+    background-color: #303841;
 }
 
 .container_financeiro {
@@ -114,58 +69,6 @@
     box-shadow: 0 0 7px #565B60;
     cursor: pointer;
 }
-
-#headerLogo{
-    display:flex;
-    width: 110px;
-    text-align: center;
-    
-}
-
-.sidenav {
-    height: 100%;
-    width: 200px; 
-    position: fixed; 
-    z-index: 1; 
-    top: 0; 
-    left: 0;
-    background-color: #303841; 
-    overflow-x: hidden; 
-    padding-top: 20px;
-    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.50);
-  }
-  
-  
-
-  .sidenav a {
-    padding: 8px 6px 16px;
-    text-decoration: none;
-    font-size: 25px;
-    color: whitesmoke;
-    display: block;
-    white-space: nowrap; 
-    margin-left:2px;
-}
-  
-  
-  .sidenav a:hover {
-    color:#5CE1E6;
-   
-  }
-  .sidenav, #headerLogo {
-    width: 50px; 
-    transition: width 0.3s;
-}
-
-
-.sidenav:hover {
-    width: 200px; 
-    #headerLogo {
-      width: 120px;
-      margin-left: 30px;
-    }
-}
-
 
 
 /*FOOTER*/
