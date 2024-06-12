@@ -1,0 +1,87 @@
+
+/*NOMETELA*/
+
+.nomeTela{
+    color: white;
+    padding: 20px 0 20px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #303841;
+  }
+  
+  .container_nots{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+  }
+
+  .area_nots{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .notificacao{
+    cursor: pointer;
+    padding: 0 20px;
+    width: 90%;
+    border-radius: 25px;
+    box-shadow: 0 0 10px #303841;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #mensagem_not{
+    width: 100%;
+    height: 100%;
+  }
+
+  .close_not{
+    z-index: 1;    
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    background: none;
+    border: none;
+  }
+  /*FOOTER*/
+  
+  .footer {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #303841;
+      color: #f9faf8;
+      padding-top: 25px;
+      padding-bottom: 25px;
+    }
+  
+    main {
+      display:flex;
+      flex-direction: column;
+    }
+    /* Style page content */
+    
+  .main {
+      flex-grow: 1;
+      display: flex;
+      
+    }
+  
+    /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+    @media screen and (max-height: 450px) {
+      .sidenav {padding-top: 15px;}
+      .sidenav a {font-size: 18px;}
+    }
+  
+  
+    

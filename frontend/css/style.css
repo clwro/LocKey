@@ -233,3 +233,18 @@ li{
     
 }
 
+
+@media screen and (max-width: 1200px) {
+    #headerLogo{
+        display: flex;
+    }
+    .card{
+        width: 90%;
+        text-align: center;
+    }
+
+    .rectangle{
+        width: 90%;
+    }
+
+}

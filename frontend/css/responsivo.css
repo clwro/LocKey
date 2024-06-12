@@ -4,10 +4,7 @@
 
     /*DESCRIÇÃO*/
 
-    .card{
-        width: 90%;
-        text-align: center;
-    }
+    
 
     .image_decric{
         display: none;
@@ -17,9 +14,6 @@
     /*AVALIAÇÕES*/
     /*IDEIA: fazer um carrossel com as avaliações para ocupar menos espaço*/
 
-    .randInfoContainer{
-        flex-direction: column;
-    }
     
     /*SOBRENOS*/
 
@@ -30,9 +24,7 @@
 
     /*ADVERTISING*/
 
-    .rectangle{
-        width: 90%;
-    }
+    
     /*INDEX*/
 
     /*REGISTRO/LOGIN*/
@@ -56,6 +48,18 @@
 
 @media screen and (max-width: 1200px) {
 
+    .card_usuario{
+        width: 70%;
+    }
+    
+    .card{
+        width: 90%;
+        text-align: center;
+    }
+
+    .randInfoContainer{
+        flex-wrap: wrap;
+    }
     #headerLogo{
         display: none;
     }

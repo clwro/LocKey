@@ -114,6 +114,7 @@ body {
 }
 
 #headerLogo{
+    width: max-content;
+    display: flex;
     padding-bottom: 10px;
 }
-

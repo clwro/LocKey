@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/usuario.css">
     <link rel="stylesheet" href="css/responsivo.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <main>
@@ -16,7 +16,7 @@
             <h1>Bem-vindo, Fulano.</h1>
         </div>
         
-         <div class="sidenav">
+        <div class="sidenav">
             <img src="img\lockeyLogoQuadrada.png" id="headerLogo">
             <a href="usuario.html">👤   Usuario</a>
             <a href="financeiro.html">💵   Financeiro</a>
@@ -24,15 +24,67 @@
             <a href="servicos.html">🔨   Serviços </a>
             <a href="chat.html">💬   Chat</a>
             <a href="notificacoes.html">🔔   Notificações</a>
-          </div>
+        </div>
        
+        <div class="container_usuario">
+            <div class="card_usuario">
+                <div class="user-profile">
+                    <h1>Usuário</h1>
+                    <img id="user-photo" src="img/avatar.png" alt="User Photo">
+                    <section>
+                        <h3 class="titu_usuarios">Nome:</h3>
+                        <p id="user-name">Fulano</p>
+                    </section>
+                    <section>
+                        <h3 class="titu_usuarios">E-mail:</h3>
+                        <p id="user-email">FulaninhoReiDelas342@example.com</p>
+                    </section>
+                    <section>
+                        <h3 class="titu_usuarios">Endereço:</h3>
+                        <p id="user-address"> Rua dos goitacazes 123, Centro, BH</p>
+                    </section>
+                    <button id="edit-btn">Editar</button>
+                </div>
+                <div class="edit-profile" style="display: none;">
+                    <input type="text" id="edit-name" placeholder="Name">
+                    <input type="email" id="edit-email" placeholder="Email">
+                    <input type="password" id="edit-password" placeholder="Password">
+                    <input type="text" id="edit-address" placeholder="Address">
+                    <button id="save-btn">Save</button>
+                </div>
+            </div>
+        </div>  
     </main>
 
+    <footer>
+    <div class="footer">
+        <p>Copyright © LocKey 2024</p>
+    </div>
+    </footer>
     
 </body>
-<footer>
-<div class="footer">
-    <p>Copyright © LocKey 2024</p>
-</div>
-</footer>
+
+<script>
+
+    document.getElementById('edit-btn').addEventListener('click', function() {
+        document.querySelector('.user-profile').style.display = 'none';
+        document.querySelector('.edit-profile').style.display = 'flex';
+      
+        // Populate edit fields with current user information
+        document.getElementById('edit-name').value = document.getElementById('user-name').innerText;
+        document.getElementById('edit-email').value = document.getElementById('user-email').innerText;
+        document.getElementById('edit-address').value = document.getElementById('user-address').innerText;
+      });
+      
+      document.getElementById('save-btn').addEventListener('click', function() {
+        // Update user information with values from edit fields
+        document.getElementById('user-name').innerText = document.getElementById('edit-name').value;
+        document.getElementById('user-email').innerText = document.getElementById('edit-email').value;
+        document.getElementById('user-address').innerText = document.getElementById('edit-address').value;
+      
+        // Hide edit profile form and display user profile
+        document.querySelector('.edit-profile').style.display = 'none';
+        document.querySelector('.user-profile').style.display = 'flex';
+      });
+  </script>
 </html>
